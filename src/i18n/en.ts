@@ -368,6 +368,13 @@ export const en = {
       dismiss: 'Not now',
     },
   },
+  pages: {
+    guidesTitle: 'Subscription guides',
+    guidesLead:
+      'Independent, practical guides to keeping recurring costs under control. No sponsored content and no affiliate links — just general steps you can use with any service.',
+    faqTitle: 'Frequently asked questions',
+    breadcrumb: 'Breadcrumb',
+  },
   notFound: {
     title: 'Page not found',
     body: 'The page you’re looking for doesn’t exist or has moved.',

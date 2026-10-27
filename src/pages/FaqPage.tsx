@@ -3,14 +3,12 @@ import { useI18n } from '../i18n';
 import type { FaqEntry } from '../seo';
 import type { PageProps } from '../routes';
 
-const TITLE = { en: 'Frequently asked questions', 'zh-HK': '常見問題' } as const;
-
 /** FAQ answers are plain text so the same strings feed the FAQPage JSON-LD. */
 export default function FaqPage({ content }: PageProps<FaqEntry[]>) {
-  const { t, locale } = useI18n();
+  const { m, t } = useI18n();
   return (
     <div className="mx-auto max-w-3xl px-4 pt-10 sm:px-6 sm:pt-14">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">{TITLE[locale]}</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">{m.pages.faqTitle}</h1>
       <div className="mt-8 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
         {content.map((f, i) => (
           <details key={i} className="group p-5" open={i < 2}>

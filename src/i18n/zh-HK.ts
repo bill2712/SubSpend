@@ -362,6 +362,12 @@ export const zhHK: Messages = {
       dismiss: '稍後再說',
     },
   },
+  pages: {
+    guidesTitle: '訂閱實用指南',
+    guidesLead: '獨立、實用的指南，助你控制定期開支。沒有贊助內容，也沒有聯盟連結——只有適用於任何服務的一般步驟。',
+    faqTitle: '常見問題',
+    breadcrumb: '導覽路徑',
+  },
   notFound: {
     title: '找不到頁面',
     body: '你要找的頁面不存在或已移動。',

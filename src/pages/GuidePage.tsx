@@ -15,7 +15,7 @@ export default function GuidePage({ route, content }: PageProps<GuideContent>) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-12">
-      <nav aria-label="Breadcrumb" className="text-sm text-slate-500 dark:text-slate-400">
+      <nav aria-label={m.pages.breadcrumb} className="text-sm text-slate-500 dark:text-slate-400">
         <ol className="flex flex-wrap gap-1.5">
           <li>
             <a href={href('/')} className="hover:underline">
