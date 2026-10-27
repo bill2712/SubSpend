@@ -69,10 +69,10 @@ export function Overview({ subs, settings, ctx, today, bmc, onEdit, onShowList }
       {/* Free-trial alerts */}
       {trials.length > 0 && (
         <section aria-labelledby="trials-title" className="rounded-2xl border border-amber-300 bg-amber-50 p-4 sm:p-5 dark:border-amber-800 dark:bg-amber-950/30">
-          <h3 id="trials-title" className={panelTitle}>
+          <h2 id="trials-title" className={panelTitle}>
             <Hourglass className="h-5 w-5 text-amber-700 dark:text-amber-300" aria-hidden />
             {m.tracker.trials.title}
-          </h3>
+          </h2>
           <ul className="mt-3 space-y-2">
             {trials.map((a) => {
               const text =
@@ -105,17 +105,17 @@ export function Overview({ subs, settings, ctx, today, bmc, onEdit, onShowList }
         {/* Upcoming payments */}
         <section aria-labelledby="upcoming-title" className={panel}>
           <div className="flex items-baseline justify-between gap-2">
-            <h3 id="upcoming-title" className={panelTitle}>
+            <h2 id="upcoming-title" className={panelTitle}>
               <CalendarClock className="h-5 w-5 text-brand-700 dark:text-brand-300" aria-hidden />
               {m.tracker.upcoming.title}
-            </h3>
+            </h2>
             <span className="text-xs text-slate-500 dark:text-slate-400">{m.tracker.upcoming.subtitle}</span>
           </div>
           {upcoming.length === 0 ? (
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">{m.tracker.upcoming.empty}</p>
           ) : (
             <>
-              <ol className="mt-3 max-h-80 divide-y divide-slate-100 overflow-y-auto dark:divide-slate-800">
+              <ol tabIndex={0} aria-labelledby="upcoming-title" className="mt-3 max-h-80 divide-y divide-slate-100 overflow-y-auto dark:divide-slate-800">
                 {upcoming.map((u) => (
                   <li key={`${u.sub.id}-${u.date}`} className="flex items-center gap-3 py-2.5">
                     <CategoryIcon category={u.sub.category} className="h-9 w-9" />
@@ -142,9 +142,9 @@ export function Overview({ subs, settings, ctx, today, bmc, onEdit, onShowList }
 
         {/* Category donut */}
         <section aria-labelledby="cat-title" className={panel}>
-          <h3 id="cat-title" className={panelTitle}>
+          <h2 id="cat-title" className={panelTitle}>
             {m.tracker.charts.byCategory}
-          </h3>
+          </h2>
           {categories.length === 0 ? (
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">{m.tracker.charts.none}</p>
           ) : (
@@ -159,9 +159,9 @@ export function Overview({ subs, settings, ctx, today, bmc, onEdit, onShowList }
       {ranked.length > 0 && (
         <section aria-labelledby="bars-title" className={panel}>
           <div className="flex items-baseline justify-between gap-2">
-            <h3 id="bars-title" className={panelTitle}>
+            <h2 id="bars-title" className={panelTitle}>
               {m.tracker.charts.bySubscription}
-            </h3>
+            </h2>
             <span className="text-xs text-slate-500 dark:text-slate-400">{m.tracker.charts.perMonth}</span>
           </div>
           <Suspense fallback={<ChartFallback height="h-40" />}>
@@ -173,10 +173,10 @@ export function Overview({ subs, settings, ctx, today, bmc, onEdit, onShowList }
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Money saved */}
         <section aria-labelledby="saved-title" className={panel}>
-          <h3 id="saved-title" className={panelTitle}>
+          <h2 id="saved-title" className={panelTitle}>
             <PiggyBank className="h-5 w-5 text-brand-700 dark:text-brand-300" aria-hidden />
             {m.tracker.savings.title}
-          </h3>
+          </h2>
           {cancelledCount === 0 ? (
             <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">{m.tracker.savings.none}</p>
           ) : (
@@ -241,10 +241,10 @@ function Comparisons({ yearly, settings, ctx }: { yearly: number; settings: Sett
 
   return (
     <section aria-labelledby="cmp-title" className={panel}>
-      <h3 id="cmp-title" className={panelTitle}>
+      <h2 id="cmp-title" className={panelTitle}>
         <Sparkles className="h-5 w-5 text-brand-700 dark:text-brand-300" aria-hidden />
         {m.tracker.comparisons.title}
-      </h3>
+      </h2>
       {items.length === 0 ? (
         <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">{m.tracker.charts.none}</p>
       ) : (

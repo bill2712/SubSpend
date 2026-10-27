@@ -49,6 +49,7 @@ const notFound = await ssr.renderNotFound();
 await fs.writeFile(path.join(dist, '404.html'), fillTemplate(notFound));
 await fs.writeFile(path.join(dist, 'sitemap.xml'), ssr.sitemapXml());
 await fs.writeFile(path.join(dist, 'robots.txt'), ssr.robotsTxt());
+await fs.writeFile(path.join(dist, 'llms.txt'), ssr.llmsTxt());
 
 const info = ssr.buildInfo;
 console.log(`Pre-rendered ${pages.length} pages + 404.html for ${info.siteUrl}`);

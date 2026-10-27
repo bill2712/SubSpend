@@ -3,7 +3,7 @@
  * description, canonical + hreflang alternates, Open Graph/Twitter tags and
  * JSON-LD structured data.
  */
-import { SITE_NAME, SITE_URL } from './config/site';
+import { ADSENSE_CLIENT, ADS_ENABLED, SITE_NAME, SITE_URL } from './config/site';
 import { HREFLANG, LOCALES, OG_LOCALE, localizedPath, type Locale } from './i18n';
 import { GUIDE_DATES, GUIDE_META } from './content/guides/meta';
 import { PAGE_META } from './content/pages';
@@ -45,6 +45,8 @@ export function buildHead(route: RouteDef, locale: Locale, extra: { faq?: FaqEnt
     `<title>${esc(title)}</title>`,
     `<meta name="description" content="${esc(description)}" />`,
   ];
+  // Lets AdSense verify site ownership even though the ad script itself is lazy-loaded.
+  if (ADS_ENABLED) tags.push(`<meta name="google-adsense-account" content="${ADSENSE_CLIENT}" />`);
   if (isNotFound) {
     tags.push('<meta name="robots" content="noindex" />');
   } else {

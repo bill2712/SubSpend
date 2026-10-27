@@ -49,6 +49,7 @@ export const zhHK: Messages = {
     loading: '載入中…',
     advertisement: '廣告',
     readMore: '閱讀全文',
+    allGuides: '所有指南',
     minutesRead: '約 {n} 分鐘閱讀',
     updated: '更新於 {date}',
     sources: '參考資料',

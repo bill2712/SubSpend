@@ -31,7 +31,7 @@ export default function HomePage({ content }: PageProps<HomeContent>) {
             {m.nav.guides}
           </h2>
           <a href={href('/guides/')} className="text-sm font-medium text-brand-800 hover:underline dark:text-brand-300">
-            {m.common.readMore} <ArrowRight className="inline h-4 w-4" aria-hidden />
+            {m.common.allGuides} <ArrowRight className="inline h-4 w-4" aria-hidden />
           </a>
         </div>
         <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

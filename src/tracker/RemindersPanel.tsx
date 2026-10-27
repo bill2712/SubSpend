@@ -98,9 +98,9 @@ export function RemindersPanel({ tracker, notifications, today, notify }: Props)
       <section aria-labelledby="ics-title" className="rounded-2xl border-2 border-brand-300 bg-brand-50/60 p-4 sm:p-6 dark:border-brand-800 dark:bg-brand-950/30">
         <div className="flex flex-wrap items-center gap-2">
           <CalendarPlus className="h-6 w-6 text-brand-700 dark:text-brand-300" aria-hidden />
-          <h3 id="ics-title" className="text-lg font-semibold text-slate-900 dark:text-white">
+          <h2 id="ics-title" className="text-lg font-semibold text-slate-900 dark:text-white">
             {r.icsTitle}
-          </h3>
+          </h2>
           <Badge tone="brand">{r.icsBadge}</Badge>
         </div>
         <p className="mt-2 max-w-2xl text-sm text-slate-700 dark:text-slate-300">{r.icsBody}</p>
@@ -141,9 +141,9 @@ export function RemindersPanel({ tracker, notifications, today, notify }: Props)
       <section aria-labelledby="notif-title" className="rounded-2xl border border-slate-200 p-4 sm:p-6 dark:border-slate-800">
         <div className="flex flex-wrap items-center gap-2">
           <Bell className="h-5 w-5 text-slate-600 dark:text-slate-300" aria-hidden />
-          <h3 id="notif-title" className="text-base font-semibold text-slate-900 dark:text-white">
+          <h2 id="notif-title" className="text-base font-semibold text-slate-900 dark:text-white">
             {r.notifTitle}
-          </h3>
+          </h2>
           <Badge tone="muted">{r.notifOptional}</Badge>
         </div>
         <p className="mt-2 max-w-2xl text-sm text-slate-700 dark:text-slate-300">{r.notifBody}</p>
@@ -188,9 +188,9 @@ export function RemindersPanel({ tracker, notifications, today, notify }: Props)
 
       {/* Data management */}
       <section aria-labelledby="data-title" className="rounded-2xl border border-slate-200 p-4 sm:p-6 dark:border-slate-800">
-        <h3 id="data-title" className="text-base font-semibold text-slate-900 dark:text-white">
+        <h2 id="data-title" className="text-base font-semibold text-slate-900 dark:text-white">
           {d.title}
-        </h3>
+        </h2>
         <p className="mt-2 max-w-2xl text-sm text-slate-700 dark:text-slate-300">{d.body}</p>
         {isDemo && <p className="mt-2 text-sm font-medium text-sky-800 dark:text-sky-300">{d.demoNote}</p>}
         <div className="mt-4 flex flex-wrap gap-3">

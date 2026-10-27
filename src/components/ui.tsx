@@ -112,7 +112,7 @@ export function Badge({ tone = 'neutral', children }: { tone?: 'neutral' | 'bran
     brand: 'bg-brand-100 text-brand-800 dark:bg-brand-900/60 dark:text-brand-200',
     warn: 'bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-200',
     danger: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-200',
-    muted: 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
+    muted: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300',
   };
   return <span className={cx('inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium', tones[tone])}>{children}</span>;
 }

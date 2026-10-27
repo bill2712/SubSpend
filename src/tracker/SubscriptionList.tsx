@@ -44,7 +44,7 @@ export function SubscriptionList({ subs, ctx, today, onEdit, onDelete, onStatus 
   return (
     <div>
       <div className="flex flex-wrap items-end gap-3">
-        <h3 className="mr-auto text-base font-semibold text-slate-900 dark:text-white">{m.tracker.list.title}</h3>
+        <h2 className="mr-auto text-base font-semibold text-slate-900 dark:text-white">{m.tracker.list.title}</h2>
         <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
           {m.tracker.list.filter}
           <Select value={filter} onChange={(e) => setFilter(e.target.value as Filter)} className="!h-10 !w-auto">
@@ -138,7 +138,7 @@ function Row({
       </div>
       <div className="flex items-center gap-2 sm:gap-4">
         <div className="mr-auto text-left sm:mr-0 sm:text-right">
-          <p className={cx('font-semibold tabular-nums', inactive ? 'text-slate-500 line-through decoration-slate-400' : 'text-slate-900 dark:text-white')}>
+          <p className={cx('font-semibold tabular-nums', inactive ? 'text-slate-600 line-through decoration-slate-400 dark:text-slate-400' : 'text-slate-900 dark:text-white')}>
             {money(costPerCycle(sub), sub.currency)} <span className="text-xs font-normal text-slate-500 no-underline dark:text-slate-400">{cycleLabel}</span>
           </p>
           {monthly !== null && (sub.cycle !== 'monthly' || sub.currency !== ctx.displayCurrency) && (

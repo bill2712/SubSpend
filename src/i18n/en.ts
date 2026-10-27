@@ -52,6 +52,7 @@ export const en = {
     loading: 'Loading…',
     advertisement: 'Advertisement',
     readMore: 'Read more',
+    allGuides: 'All guides',
     minutesRead: '{n} min read',
     updated: 'Updated {date}',
     sources: 'Sources',

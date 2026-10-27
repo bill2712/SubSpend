@@ -17,6 +17,11 @@ interface Props {
   ctx: ConversionContext;
 }
 
+const SOURCE_LINKS: Record<string, string> = {
+  'ExchangeRate-API': 'https://www.exchangerate-api.com',
+  'fawazahmed0/exchange-api': 'https://github.com/fawazahmed0/exchange-api',
+};
+
 const section = 'rounded-2xl border border-slate-200 p-4 sm:p-6 dark:border-slate-800';
 const h = 'text-base font-semibold text-slate-900 dark:text-white';
 
@@ -30,9 +35,9 @@ export function SettingsPanel({ tracker, rates, ctx }: Props) {
   return (
     <div className="space-y-6">
       <section aria-labelledby="set-general" className={section}>
-        <h3 id="set-general" className={h}>
+        <h2 id="set-general" className={h}>
           {s.general}
-        </h3>
+        </h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
           <Field label={s.displayCurrency}>
             {({ id }) => (
@@ -68,9 +73,9 @@ export function SettingsPanel({ tracker, rates, ctx }: Props) {
 
       <section aria-labelledby="set-rates" className={section}>
         <div className="flex flex-wrap items-center gap-3">
-          <h3 id="set-rates" className={`${h} mr-auto`}>
+          <h2 id="set-rates" className={`${h} mr-auto`}>
             {s.ratesTitle}
-          </h3>
+          </h2>
           {rates.needed && (
             <Button size="sm" onClick={() => void rates.refresh()} disabled={rates.status === 'loading'}>
               <RefreshCw className={`h-4 w-4 ${rates.status === 'loading' ? 'animate-spin' : ''}`} aria-hidden />
@@ -89,11 +94,19 @@ export function SettingsPanel({ tracker, rates, ctx }: Props) {
                   ? `${t(s.ratesOk, { source: rates.table.source, date: date(rates.table.date) })}${rates.status === 'error' ? ` ${s.ratesError}` : ''}`
                   : s.ratesLoading}
         </p>
+        {rates.needed && rates.table && SOURCE_LINKS[rates.table.source] && (
+          <p className="mt-1 text-xs">
+            {/* Attribution required by the rate provider's terms. */}
+            <a href={SOURCE_LINKS[rates.table.source]} target="_blank" rel="noopener noreferrer" className="text-brand-800 underline dark:text-brand-300">
+              {rates.table.source === 'ExchangeRate-API' ? 'Rates By Exchange Rate API' : rates.table.source}
+            </a>
+          </p>
+        )}
         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{s.ratesPrivacy}</p>
 
         {foreign.length > 0 && (
           <div className="mt-5">
-            <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{s.manualTitle}</h4>
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{s.manualTitle}</h3>
             <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{s.manualHelp}</p>
             <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {foreign.map((code) => (
@@ -105,9 +118,9 @@ export function SettingsPanel({ tracker, rates, ctx }: Props) {
       </section>
 
       <section aria-labelledby="set-cmp" className={section}>
-        <h3 id="set-cmp" className={h}>
+        <h2 id="set-cmp" className={h}>
           {s.comparisonsTitle}
-        </h3>
+        </h2>
         <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{s.comparisonsHelp}</p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {COMPARISONS.map((c) => {

@@ -8,8 +8,8 @@ import { App } from './App';
 import { HREFLANG, LOCALES, createI18n, loadMessages, localizedPath, type Locale } from './i18n';
 import { NOT_FOUND, ROUTES, loadRoute, routeSources, type RouteDef } from './routes';
 import { buildHead, absoluteUrl, type FaqEntry } from './seo';
-import { GUIDE_DATES } from './content/guides/meta';
-import { SITE_URL, ADS_ENABLED, ADSENSE_CLIENT } from './config/site';
+import { GUIDE_DATES, GUIDE_META, GUIDE_SLUGS } from './content/guides/meta';
+import { SITE_NAME, SITE_URL, ADS_ENABLED, ADSENSE_CLIENT } from './config/site';
 
 export interface RenderedPage {
   url: string;
@@ -68,6 +68,31 @@ export function sitemapXml(): string {
 
 export function robotsTxt(): string {
   return `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+}
+
+/** llms.txt (https://llmstxt.org): a Markdown index of the site for AI agents. */
+export function llmsTxt(): string {
+  const lines = [
+    `# ${SITE_NAME}`,
+    '',
+    '> A free, private subscription tracker. All data stays in the browser (localStorage); there is no backend, account or bank connection.',
+    '',
+    '## Tool',
+    `- [Subscription tracker](${absoluteUrl('/')}): add subscriptions, see monthly/yearly totals, upcoming payments, free-trial alerts; export .ics, JSON, CSV.`,
+    `- [繁體中文版本](${absoluteUrl('/zh-hk/')})`,
+    '',
+    '## Guides',
+    ...GUIDE_SLUGS.map((slug) => `- [${GUIDE_META.en[slug].title}](${absoluteUrl(`/guides/${slug}/`)}): ${GUIDE_META.en[slug].description}`),
+    '',
+    '## About',
+    `- [FAQ](${absoluteUrl('/faq/')})`,
+    `- [About](${absoluteUrl('/about/')})`,
+    `- [Privacy policy](${absoluteUrl('/privacy/')})`,
+    `- [Terms of use](${absoluteUrl('/terms/')})`,
+    `- [Disclaimer](${absoluteUrl('/disclaimer/')})`,
+    '',
+  ];
+  return lines.join('\n');
 }
 
 export const buildInfo = { siteUrl: SITE_URL, adsEnabled: ADS_ENABLED, adsenseClient: ADSENSE_CLIENT };

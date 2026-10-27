@@ -141,7 +141,7 @@ function CatalogPicker({ inputRef, onPick }: { inputRef: React.RefObject<HTMLInp
       <CategoryIcon category={item.category} className="h-9 w-9" />
       <span className="flex-1">
         <span className="block font-medium text-slate-900 dark:text-white">{displayName(item)}</span>
-        <span className="block text-xs text-slate-500 dark:text-slate-400">{m.categories[item.category]}</span>
+        <span className="block text-xs text-slate-600 dark:text-slate-400">{m.categories[item.category]}</span>
       </span>
     </div>
   );

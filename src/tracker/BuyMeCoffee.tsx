@@ -54,9 +54,9 @@ export function BuyMeCoffeeCard({ onDismiss }: { onDismiss: () => void }) {
         <Coffee className="h-6 w-6" />
       </span>
       <div className="flex-1">
-        <h3 id="bmc-title" className="font-semibold text-slate-900 dark:text-white">
+        <h2 id="bmc-title" className="font-semibold text-slate-900 dark:text-white">
           {m.tracker.bmc.title}
-        </h3>
+        </h2>
         <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{m.tracker.bmc.body}</p>
       </div>
       <a href={BMC_URL} target="_blank" rel="noopener" className={buttonClass('secondary', 'md')}>
