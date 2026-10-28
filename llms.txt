@@ -1,0 +1,21 @@
+# SubSpend
+
+> A free, private subscription tracker. All data stays in the browser (localStorage); there is no backend, account or bank connection.
+
+## Tool
+- [Subscription tracker](https://bill2712.github.io/SubSpend/): add subscriptions, see monthly/yearly totals, upcoming payments, free-trial alerts; export .ics, JSON, CSV.
+- [繁體中文版本](https://bill2712.github.io/SubSpend/zh-hk/)
+
+## Guides
+- [How to audit your subscriptions in 15 minutes](https://bill2712.github.io/SubSpend/guides/how-to-audit-subscriptions/): A step-by-step routine to find every recurring charge, total what you really pay and decide what to keep, downgrade or cancel — in about a quarter of an hour.
+- [Free trials: how to avoid surprise charges](https://bill2712.github.io/SubSpend/guides/avoid-free-trial-charges/): How free trials turn into paid subscriptions, what to check before you sign up, and simple habits that stop unwanted renewals.
+- [How to share subscriptions fairly with family](https://bill2712.github.io/SubSpend/guides/share-subscriptions-fairly/): Family and group plans can cut costs, but only if the split feels fair. Practical ways to divide costs, handle money and avoid friction.
+- [Monthly vs. yearly billing: when yearly is worth it](https://bill2712.github.io/SubSpend/guides/monthly-vs-yearly-billing/): Yearly plans often look cheaper per month. A simple break-even method to decide when paying upfront actually saves money — and when it doesn’t.
+- [How to cancel subscriptions: general steps and what to watch for](https://bill2712.github.io/SubSpend/guides/how-to-cancel-subscriptions/): General steps for cancelling through app stores, websites and carriers, what to confirm before and after, and how to handle charges after cancelling.
+
+## About
+- [FAQ](https://bill2712.github.io/SubSpend/faq/)
+- [About](https://bill2712.github.io/SubSpend/about/)
+- [Privacy policy](https://bill2712.github.io/SubSpend/privacy/)
+- [Terms of use](https://bill2712.github.io/SubSpend/terms/)
+- [Disclaimer](https://bill2712.github.io/SubSpend/disclaimer/)

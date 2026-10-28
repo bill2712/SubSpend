@@ -1,0 +1,3 @@
+# Replace pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID (without "ca-").
+# The build rewrites this file automatically when VITE_ADSENSE_CLIENT is set.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
