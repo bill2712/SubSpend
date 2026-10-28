@@ -130,6 +130,12 @@ slashes, cache headers for `/assets/*` and basic security headers. Add the env v
 `NODE_VERSION=22` plus the `VITE_*` vars. `public/_headers` provides the same headers. Both hosts serve
 `404.html` for unknown paths.
 
+**GitHub Pages (free preview, current live site):** `npm run deploy:gh-pages` builds with
+`VITE_BASE_PATH=/SubSpend/` and `VITE_SITE_URL=https://bill2712.github.io/SubSpend`, then force-pushes `dist/`
+to the `gh-pages` branch. In the repo’s Settings → Pages, the source must be “Deploy from a branch”,
+branch `gh-pages`, folder `/ (root)`. A project subfolder is fine for previewing, but AdSense needs the site
+on its own domain — move to Vercel/Cloudflare (or a custom domain) before applying.
+
 ## Project structure
 
 ```

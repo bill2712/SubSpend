@@ -29,7 +29,7 @@ function preloadsFor(sources) {
   // The main entry chunk is already loaded by the <script> tag.
   const entryFile = manifest['index.html']?.file;
   files.delete(entryFile);
-  return [...files].map((f) => `<link rel="modulepreload" crossorigin href="/${f}" />`).join('\n    ');
+  return [...files].map((f) => `<link rel="modulepreload" crossorigin href="${ssr.buildInfo.basePath}${f}" />`).join('\n    ');
 }
 
 function fillTemplate(page) {

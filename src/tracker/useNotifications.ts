@@ -10,6 +10,7 @@ import type { Subscription } from '../lib/types';
 import type { Settings } from '../lib/validation';
 import type { I18n } from '../i18n';
 import { KEYS, readKey, writeKey } from './storage';
+import { withBase } from '../config/site';
 
 export type PermissionState = 'unsupported' | 'default' | 'granted' | 'denied';
 
@@ -40,7 +41,7 @@ export function useNotifications(subs: Subscription[], settings: Settings, i18n:
     const show = (key: string, title: string, body: string) => {
       if (notified[key]) return;
       try {
-        new Notification(title, { body, tag: key, icon: '/apple-touch-icon.png' });
+        new Notification(title, { body, tag: key, icon: withBase('/apple-touch-icon.png') });
         notified[key] = today;
       } catch {
         /* some mobile browsers only allow notifications from a service worker */
@@ -92,7 +93,7 @@ export function useNotifications(subs: Subscription[], settings: Settings, i18n:
   const sendTest = useCallback(() => {
     if (currentPermission() !== 'granted') return;
     try {
-      new Notification(i18n.t(i18n.m.tracker.reminders.notifTestTitle), { body: i18n.m.tracker.reminders.notifTestBody, icon: '/apple-touch-icon.png' });
+      new Notification(i18n.t(i18n.m.tracker.reminders.notifTestTitle), { body: i18n.m.tracker.reminders.notifTestBody, icon: withBase('/apple-touch-icon.png') });
     } catch {
       /* ignore */
     }

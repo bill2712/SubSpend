@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, SITE_NAME } from '../../config/site';
+import { CONTACT_EMAIL, SITE_NAME, withBase } from '../../config/site';
 import type { TextPageContent } from '../types';
 
 const content: TextPageContent = {
@@ -33,7 +33,7 @@ const content: TextPageContent = {
       <h2>Help with a specific subscription</h2>
       <p>
         We are not affiliated with any listed service and cannot cancel, refund or change a subscription for you. For billing problems, contact
-        the provider or the app store that bills you. Our guide on <a href="/guides/how-to-cancel-subscriptions/">cancelling subscriptions</a>{' '}
+        the provider or the app store that bills you. Our guide on <a href={withBase('/guides/how-to-cancel-subscriptions/')}>cancelling subscriptions</a>{' '}
         explains the general steps.
       </p>
     </>

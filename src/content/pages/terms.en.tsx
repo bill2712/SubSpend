@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, LEGAL_LAST_UPDATED, SITE_NAME } from '../../config/site';
+import { CONTACT_EMAIL, LEGAL_LAST_UPDATED, SITE_NAME, withBase } from '../../config/site';
 import type { TextPageContent } from '../types';
 
 const content: TextPageContent = {
@@ -24,7 +24,7 @@ const content: TextPageContent = {
         Totals, conversions, projected billing dates and reminders are calculated from the information you enter and from third-party reference
         exchange rates. They are estimates and may differ from what you are actually charged. Always check your own statements and the
         provider’s terms. The site and its guides provide general information only and are not financial, legal or tax advice. See our{' '}
-        <a href="/disclaimer/">disclaimer</a>.
+        <a href={withBase('/disclaimer/')}>disclaimer</a>.
       </p>
 
       <h2>4. Reminders</h2>

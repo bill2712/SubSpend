@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, LEGAL_LAST_UPDATED, SITE_NAME } from '../../config/site';
+import { CONTACT_EMAIL, LEGAL_LAST_UPDATED, SITE_NAME, withBase } from '../../config/site';
 import type { TextPageContent } from '../types';
 
 const content: TextPageContent = {
@@ -15,7 +15,7 @@ const content: TextPageContent = {
 
       <h2>3. 準確性及並非建議</h2>
       <p>
-        總額、匯率換算、推算的扣款日期及提醒，均根據你輸入的資料及第三方參考匯率計算，屬估算性質，可能與你實際被收取的金額不同。請務必核對你的結單及供應商的條款。本網站及其指南只提供一般資訊，並非理財、法律或稅務建議。請參閱我們的<a href="/zh-hk/disclaimer/">免責聲明</a>。
+        總額、匯率換算、推算的扣款日期及提醒，均根據你輸入的資料及第三方參考匯率計算，屬估算性質，可能與你實際被收取的金額不同。請務必核對你的結單及供應商的條款。本網站及其指南只提供一般資訊，並非理財、法律或稅務建議。請參閱我們的<a href={withBase('/zh-hk/disclaimer/')}>免責聲明</a>。
       </p>
 
       <h2>4. 提醒</h2>

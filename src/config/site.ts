@@ -8,6 +8,17 @@ const env = import.meta.env;
 /** Brand name. Change it here and it updates across UI strings and content. */
 export const SITE_NAME = 'SubSpend';
 
+/**
+ * Path the site is served from: "/" normally, or e.g. "/SubSpend/" on GitHub
+ * Pages project sites. Set with VITE_BASE_PATH at build time (see vite.config.ts).
+ */
+export const BASE_PATH: string = import.meta.env.BASE_URL || '/';
+
+/** Prefix a root-relative path ("/guides/") with the base path. */
+export function withBase(path: string): string {
+  return `${BASE_PATH.replace(/\/+$/, '')}${path}`;
+}
+
 /** Public origin, no trailing slash. Used for canonical URLs, hreflang, sitemap. */
 export const SITE_URL: string = (env.VITE_SITE_URL || 'https://example.com').replace(/\/+$/, '');
 

@@ -16,7 +16,9 @@
     "check": "npm run typecheck && npm test && npm run build && node scripts/check-content.mjs",
     "og": "node scripts/generate-og.mjs",
     "test:e2e": "node tests/e2e.cjs",
-    "test:a11y": "node tests/a11y.cjs"
+    "test:a11y": "node tests/a11y.cjs",
+    "build:gh-pages": "VITE_BASE_PATH=/SubSpend/ VITE_SITE_URL=https://bill2712.github.io/SubSpend npm run build",
+    "deploy:gh-pages": "bash scripts/deploy-gh-pages.sh"
   },
   "dependencies": {
     "lucide-react": "^1.62.0",

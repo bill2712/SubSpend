@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, SITE_NAME } from '../../config/site';
+import { CONTACT_EMAIL, SITE_NAME, withBase } from '../../config/site';
 import type { TextPageContent } from '../types';
 
 const content: TextPageContent = {
@@ -29,7 +29,7 @@ const content: TextPageContent = {
 
       <h2>有關個別訂閱的協助</h2>
       <p>
-        我們與所列的任何服務均無關聯，無法代你取消、退款或更改訂閱。如有賬單問題，請聯絡向你收費的供應商或應用程式商店。我們的<a href="/zh-hk/guides/how-to-cancel-subscriptions/">取消訂閱指南</a>解釋了一般步驟。
+        我們與所列的任何服務均無關聯，無法代你取消、退款或更改訂閱。如有賬單問題，請聯絡向你收費的供應商或應用程式商店。我們的<a href={withBase('/zh-hk/guides/how-to-cancel-subscriptions/')}>取消訂閱指南</a>解釋了一般步驟。
       </p>
     </>
   ),

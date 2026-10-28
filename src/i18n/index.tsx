@@ -3,7 +3,7 @@
  * context with formatting helpers. No library needed for two locales.
  */
 import { createContext, useContext, type ReactNode } from 'react';
-import { SITE_NAME } from '../config/site';
+import { SITE_NAME, withBase } from '../config/site';
 import { fill, formatDate, formatMoney, formatNumber } from '../lib/format';
 import type { ISODate } from '../lib/dates';
 import type { Messages, PluralForms } from './en';
@@ -49,6 +49,7 @@ export interface I18n {
   money: (amount: number, currency: string, compact?: boolean) => string;
   date: (iso: ISODate, style?: 'short' | 'medium' | 'long') => string;
   num: (n: number, digits?: number) => string;
+  /** Locale- and base-path-aware link for a locale-less path. */
   href: (path: string) => string;
 }
 
@@ -65,7 +66,7 @@ export function createI18n(locale: Locale, m: Messages): I18n {
     money: (amount, currency, compact) => formatMoney(amount, currency, intl, { compact }),
     date: (iso, style) => formatDate(iso, intl, style),
     num: (n, digits) => formatNumber(n, intl, digits),
-    href: (path) => localizedPath(locale, path),
+    href: (path) => withBase(localizedPath(locale, path)),
   };
 }
 

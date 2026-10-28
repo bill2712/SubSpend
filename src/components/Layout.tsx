@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Coffee, Languages, Lock, Menu } from 'lucide-react';
 import { useI18n, localizedPath, type Locale } from '../i18n';
-import { BMC_URL, SITE_NAME } from '../config/site';
+import { BMC_URL, SITE_NAME, withBase } from '../config/site';
 import { GUIDE_META, GUIDE_SLUGS } from '../content/guides/meta';
 import type { RouteDef } from '../routes';
 import { LogoMark } from './Logo';
@@ -11,7 +11,7 @@ import { cx } from './ui';
 export function Layout({ route, children }: { route: RouteDef; children: ReactNode }) {
   const { m, t, href, locale } = useI18n();
   const other: Locale = locale === 'en' ? 'zh-HK' : 'en';
-  const otherPath = localizedPath(other, route.id === 'notFound' ? '/' : route.path);
+  const otherPath = withBase(localizedPath(other, route.id === 'notFound' ? '/' : route.path));
 
   const nav = [
     { path: '/', label: m.nav.tracker, active: route.id === 'home' },

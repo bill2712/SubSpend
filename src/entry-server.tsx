@@ -9,7 +9,7 @@ import { HREFLANG, LOCALES, createI18n, loadMessages, localizedPath, type Locale
 import { NOT_FOUND, ROUTES, loadRoute, routeSources, type RouteDef } from './routes';
 import { buildHead, absoluteUrl, type FaqEntry } from './seo';
 import { GUIDE_DATES, GUIDE_META, GUIDE_SLUGS } from './content/guides/meta';
-import { SITE_NAME, SITE_URL, ADS_ENABLED, ADSENSE_CLIENT } from './config/site';
+import { BASE_PATH, SITE_NAME, SITE_URL, ADS_ENABLED, ADSENSE_CLIENT } from './config/site';
 
 export interface RenderedPage {
   url: string;
@@ -95,4 +95,4 @@ export function llmsTxt(): string {
   return lines.join('\n');
 }
 
-export const buildInfo = { siteUrl: SITE_URL, adsEnabled: ADS_ENABLED, adsenseClient: ADSENSE_CLIENT };
+export const buildInfo = { basePath: BASE_PATH, siteUrl: SITE_URL, adsEnabled: ADS_ENABLED, adsenseClient: ADSENSE_CLIENT };

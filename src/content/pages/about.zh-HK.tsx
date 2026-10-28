@@ -1,4 +1,4 @@
-import { BMC_URL, SITE_NAME } from '../../config/site';
+import { BMC_URL, SITE_NAME, withBase } from '../../config/site';
 import type { TextPageContent } from '../types';
 
 const content: TextPageContent = {
@@ -39,7 +39,7 @@ const content: TextPageContent = {
 
       <h2>獨立性</h2>
       <p>
-        我們與服務清單中的任何服務均無關聯。它們的名稱只為方便你快速找到。如你發現指南有錯誤或追蹤工具有問題，請<a href="/zh-hk/contact/">告訴我們</a>。
+        我們與服務清單中的任何服務均無關聯。它們的名稱只為方便你快速找到。如你發現指南有錯誤或追蹤工具有問題，請<a href={withBase('/zh-hk/contact/')}>告訴我們</a>。
       </p>
     </>
   ),

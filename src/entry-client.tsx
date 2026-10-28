@@ -2,12 +2,14 @@ import { StrictMode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import './index.css';
 import { App } from './App';
-import { SITE_NAME } from './config/site';
+import { BASE_PATH, SITE_NAME } from './config/site';
 import { createI18n, loadMessages, splitLocale } from './i18n';
 import { NOT_FOUND, loadRoute, matchRoute } from './routes';
 
 async function boot() {
-  const { locale, path } = splitLocale(window.location.pathname);
+  const base = BASE_PATH.replace(/\/+$/, '');
+  const pathname = base && window.location.pathname.startsWith(base) ? window.location.pathname.slice(base.length) || '/' : window.location.pathname;
+  const { locale, path } = splitLocale(pathname);
   const matched = matchRoute(path);
   const route = matched ?? NOT_FOUND;
   const [{ Page }, messages] = await Promise.all([loadRoute(route, locale), loadMessages(locale)]);

@@ -1,4 +1,4 @@
-import { BMC_URL, SITE_NAME } from '../../config/site';
+import { BMC_URL, SITE_NAME, withBase } from '../../config/site';
 import type { TextPageContent } from '../types';
 
 const content: TextPageContent = {
@@ -50,7 +50,7 @@ const content: TextPageContent = {
       <h2>Independence</h2>
       <p>
         We are not affiliated with any of the services in the catalog. Their names appear only so you can find them quickly. If you spot a
-        mistake in a guide or a bug in the tracker, please <a href="/contact/">let us know</a>.
+        mistake in a guide or a bug in the tracker, please <a href={withBase('/contact/')}>let us know</a>.
       </p>
     </>
   ),
